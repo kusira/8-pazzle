@@ -57,16 +57,16 @@ body main .container .frame div div p {
   color: rgb(0, 0, 0);
 }
 body main .container .frame div .tile.up {
-  animation: 0.3s up_animation forwards;
+  animation: 0.2s up_animation forwards;
 }
 body main .container .frame div .tile.right {
-  animation: 0.3s ri_animation forwards;
+  animation: 0.2s ri_animation forwards;
 }
 body main .container .frame div .tile.down {
-  animation: 0.3s do_animation forwards;
+  animation: 0.2s do_animation forwards;
 }
 body main .container .frame div .tile.left {
-  animation: 0.3s le_animation forwards;
+  animation: 0.2s le_animation forwards;
 }
 body main .container .frame div .no0 {
   background: #f8eadc;

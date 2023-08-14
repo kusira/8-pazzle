@@ -51,7 +51,7 @@ function time_resolve() {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve();
-        }, 200);
+        }, 100);
     })
 }
 
@@ -165,7 +165,7 @@ function restore(now_board, operations){
     if(cnt > operations.length-1){
         clearInterval(intervalId);
         is_animation = false;
-    }}, 250);
+    }}, 150);
 }
 
 let reader = new FileReader();
