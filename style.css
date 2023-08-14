@@ -1,0 +1,142 @@
+body header {
+  width: 100%;
+  height: 80px;
+  background: #b12323;
+}
+body header .header-container {
+  max-width: 700px;
+  width: 80%;
+  margin: 0 auto;
+}
+body header .header-container .title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 80px;
+}
+body main .container {
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  width: 80%;
+}
+body main .container .frame {
+  width: 450px;
+  height: 450px;
+  border: 1px solid;
+  margin: 0 auto;
+  margin-top: 60px;
+  zoom: 0.7;
+}
+@media screen and (min-width: 414px) {
+  body main .container .frame {
+    zoom: 0.85;
+  }
+}
+@media screen and (min-width: 576px) {
+  body main .container .frame {
+    zoom: 1;
+  }
+}
+body main .container .frame div {
+  display: flex;
+  align-items: center;
+}
+body main .container .frame div div {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 150px;
+  height: 150px;
+}
+body main .container .frame div div p {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 48px;
+  color: rgb(0, 0, 0);
+}
+body main .container .frame div .tile.up {
+  animation: 0.3s up_animation forwards;
+}
+body main .container .frame div .tile.right {
+  animation: 0.3s ri_animation forwards;
+}
+body main .container .frame div .tile.down {
+  animation: 0.3s do_animation forwards;
+}
+body main .container .frame div .tile.left {
+  animation: 0.3s le_animation forwards;
+}
+body main .container .frame div .no0 {
+  background: #f8eadc;
+}
+body main .container .frame div .no1 {
+  background: #f1d5b8;
+}
+body main .container .frame div .no2 {
+  background: #eabf95;
+}
+body main .container .frame div .no3 {
+  background: #e2aa72;
+}
+body main .container .frame div .no4 {
+  background: #dc954e;
+}
+body main .container .frame div .no5 {
+  background: #d5802b;
+}
+body main .container .frame div .no6 {
+  background: #b16a23;
+}
+body main .container .frame div .no7 {
+  background: #8d551d;
+}
+body main .container .btn {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  border-radius: 2px;
+  margin-top: 60px;
+  padding: 8px 20px;
+}
+body main .container .btn:active {
+  transform: translateY(2px);
+}
+body main .container #restoration-btn {
+  background-color: #fa8484;
+}
+body main .container #random-btn {
+  background-color: #73b4dc;
+}
+body footer {
+  text-align: center;
+}
+
+@keyframes up_animation {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes le_animation {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes do_animation {
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes ri_animation {
+  100% {
+    transform: translateX(-100%);
+  }
+}/*# sourceMappingURL=style.css.map */
