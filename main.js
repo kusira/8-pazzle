@@ -42,11 +42,10 @@ permutations.forEach((per,i) => {
 
 const tiles = document.querySelectorAll(".tile");
 const tiles_text = document.querySelectorAll(".number");
-const four_directions = [-width, 1, width, -1];
 let is_moving = false;
 let is_animation = false;
 
-// 0.3秒待機
+// 0.1秒待機
 function time_resolve() {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -62,7 +61,6 @@ async function wait() {
 // 盤面の生成
 function make_board(now_board){
     tiles.forEach((tile,i) => {
-        // console.log(tiles_text[i].textContent)
         if (now_board[i] != blank_tile) {
             tiles_text[i].textContent = `${now_board[i]}`;
         }else{
@@ -88,6 +86,7 @@ function is_vaild(x){
 
 // タイルを押したときのリアクション
 function btn_action(moves_tile_idx){
+    let directions = [-width, 1, width, -1];
     let blank_tile_idx = -1;
     for (let i = 0; i < tiles_num; i++) {
         if(now_board[i] == blank_tile){
@@ -97,8 +96,17 @@ function btn_action(moves_tile_idx){
     if(moves_tile_idx === blank_tile_idx){
         return [-1, -1];
     }
-    for (let i = 0; i < 4; i++) {
-        val = four_directions[i];;
+    if(moves_tile_idx % width === 0){
+        index = directions.indexOf(-1)
+        directions[index] = 100000
+    }
+    if(moves_tile_idx % width === 2){
+        index = directions.indexOf(1)
+        directions[index] = 100000
+    }
+
+    for(let i = 0; i < directions.length; i++) {
+        val = directions[i];
         replace_tile_idx = moves_tile_idx + val;
         if(is_vaild(replace_tile_idx)){
             if(now_board[replace_tile_idx] === blank_tile){
@@ -204,7 +212,6 @@ all_operations = csvArray
 restoration_btn.addEventListener("click",()=>{
     let idx = per_to_idx[now_board];
     let operations = all_operations[idx];
-    // console.log(all_operations[idx])
     for (let i = 0; i < operations.length; i++) {
         operations[i] = Number.parseInt(operations[i]);
     }
